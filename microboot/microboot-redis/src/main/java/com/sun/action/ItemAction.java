@@ -42,5 +42,8 @@ public class ItemAction extends AbstractAction{
 	public String getFlag() {
 		return null;
 	}
-
+	@RequestMapping("hello")
+	public String home(){
+		return "hello";
+	}
 }
