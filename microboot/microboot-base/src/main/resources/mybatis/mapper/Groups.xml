@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sun.dao.IGroupsDAO"><!-- 在此定义命名空间 -->
+ 	<resultMap type="Groups" id="GroupsResultMap">
+		<id property="gid" column="gid"/>
+		<result property="title" column="title"/>
+		<result property="type" column="type"/>
+		<collection property="allActions" javaType="java.util.List" ofType="Action"/>
+		<collection property="allDepts" javaType="java.util.List" ofType="Dept"/>
+	</resultMap>
+	<!-- 根据部门的编号查询出权限组的信息，使用子查询从部门权限关系表
+	中查询权限组的编号，之后通过权限组的编号从权限组中查询出信息 -->
+	<select id="findAllByDept" parameterType="Integer" resultMap="GroupsResultMap">
+		select gid,title,type from groups where gid in(
+			select gid from dept_groups where did=#{pdid});
+	</select>
+</mapper>

@@ -1,0 +1,5 @@
+package com.sun.service.Impl;
+
+public class EmpServiceImpl {
+
+}

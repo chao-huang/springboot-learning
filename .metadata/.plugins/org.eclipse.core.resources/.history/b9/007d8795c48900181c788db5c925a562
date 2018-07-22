@@ -1,0 +1,32 @@
+package com.sun.action;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sun.action.abs.AbstractAction;
+import com.sun.service.IDeptService;
+import com.sun.vo.Dept;
+
+public class DeptAction extends AbstractAction {
+	@Resource
+	private IDeptService deptService;
+	public void getDeptList(HttpServletResponse response){
+		List<Dept> list = new ArrayList();
+		try {
+			list = this.deptService.list();
+			super.printJSONList(response, list, "allDepts");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	@Override
+	public String getFlag() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

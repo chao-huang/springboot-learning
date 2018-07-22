@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sun.dao.IDeptDAO"><!-- 在此定义命名空间 -->
+	<resultMap type="Dept" id="DeptResultMap">
+		<id property="did" column="did"/>
+		<result property="title" column="title"/>
+		<result property="sflag" column="sflag"/>
+		<!-- 这是一对多的配置 -->
+		<collection property="allEmps" column="did" javaType="java.util.List" ofType="Emp"></collection>
+		<collection property="allGroups" javaType="java.util.List" ofType="Groups"/>
+	</resultMap>
+	<!-- 查询部门的所有信息 -->
+	<select id="findAll" resultMap="DeptResultMap">
+		SELECT did,title,sflag FROM dept
+	</select>
+	<select id="findById" parameterType="Integer" resultMap="DeptResultMap">
+	SELECT did,title,sflag FROM dept where did=#{did}
+	</select>
+</mapper>

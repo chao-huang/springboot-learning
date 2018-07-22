@@ -1,0 +1,33 @@
+package com.sun.amr.service.Impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.sun.amr.dao.IDeptDAO;
+import com.sun.amr.service.IDeptService;
+import com.sun.amr.service.abs.AbstractService;
+import com.sun.amr.vo.Dept;
+@Service
+public class DeptServiceImpl extends AbstractService implements IDeptService {
+	@Resource
+	private IDeptDAO deptDAO;
+	@Override
+	public List<Dept> list(Integer eid) throws Exception {
+		//进行权限的验证，只有4号权限才有修改的功能
+		if(!super.checkAuth(eid, 4)) {
+			return null;
+		}
+		//如果有权限则调用dao层的方法进行数据的查询
+		return this.deptDAO.findAll();
+	}
+	@Override
+	public boolean edit(Integer eid, Dept vo) throws Exception {
+		if(super.checkAuth(eid, 7)) {//只有拥有7权限才可以进行修改
+			return this.deptDAO.doUpdate(vo)>0;
+		}
+		return false;
+	}
+}

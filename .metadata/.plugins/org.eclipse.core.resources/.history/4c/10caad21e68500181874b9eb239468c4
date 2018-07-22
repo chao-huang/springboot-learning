@@ -1,0 +1,5 @@
+package com.sun.vo;
+
+public class User {
+
+}

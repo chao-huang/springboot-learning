@@ -1,0 +1,25 @@
+package com.sun.service;
+
+import java.util.List;
+
+import com.sun.amr.vo.Dept;
+
+public interface IDeptService {
+	/**
+	 * ��ѯ���в��ŵ���Ϣ������dao���findAll()����
+	 * 
+	 * @param eid
+	 *            ��ǰ��Ա�ı�ţ�����Ȩ�޵���֤
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Dept> list(Integer eid) throws Exception;
+	/**
+	 * �޸Ĳ��ŵ�����
+	 * @param eid �޸��˵ı�ţ�����Ȩ����֤
+	 * @param dept
+	 * @return
+	 * @throws Exception
+	 */
+	public boolean edit(Integer eid,Dept dept)throws Exception; 
+}

@@ -1,0 +1,11 @@
+package com.sun.action;
+
+import javax.annotation.Resource;
+
+import com.sun.service.IDeptService;
+
+public class DeptAction {
+	@Resource
+	private IDeptService deptService;
+	
+}
