@@ -114,5 +114,6 @@
 		<module>microboot-base</module>
 		<module>microboot-redis</module>
 		<module>microboot-swagger2</module>
+		<module>microboot-db</module>
 	</modules>
 </project>

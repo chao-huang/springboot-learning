@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sun.dao.IActionDAO"><!-- 在此定义命名空间 -->
+	<resultMap type="Action" id="ActionResultMap">
+		<id property="actid" column="actid" />
+		<result property="title" column="title" />
+		<result property="url" column="url" />
+		<result property="sflag" column="sflag" />
+		<!-- 每个权限都有自己所属的权限组，使用了级联查询 -->
+		<association property="groups" column="gid"
+			resultMap="com.sun.amr.dao.IGroupsDAO.GroupsResultMap" />
+	</resultMap>
+	<!-- 根据权限组的编号从权限表中查询信息 -->
+	<select id="findAllByGroups" parameterType="Integer" resultMap="ActionResultMap">
+		select actid,gid,title,url,sflag FROM action where gid=#{pgid}
+	</select>
+	<select id="findByIdAndDept" parameterType="java.util.Map"
+		resultMap="ActionResultMap">
+		SELECT actid,gid,title,url,sflag FROM action WHERE actid=#{actid}
+		IN(
+		SELECT actid FROM action WHERE gid IN(
+		SELECT gid FROM dept_groups WHERE did=#{did}
+		)
+		)
+	</select>
+</mapper>
