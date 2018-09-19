@@ -16,4 +16,5 @@ public interface IItemService {
 	 * @return
 	 */
 	public List<Item> getItemAll()throws Exception;
+	public boolean setRedis();
 }

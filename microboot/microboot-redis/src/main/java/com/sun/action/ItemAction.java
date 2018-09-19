@@ -5,13 +5,13 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sun.action.abs.AbstractAction;
+import com.sun.redisservice.IRedisService;
 import com.sun.service.IItemService;
-import com.sun.tools.internal.ws.processor.model.Request;
 import com.sun.vo.Item;
 
 @RestController
@@ -19,6 +19,7 @@ import com.sun.vo.Item;
 public class ItemAction extends AbstractAction{
 	@Resource
 	private IItemService itemService;
+	
 	@RequestMapping(value="/list")
 	public void getAll(HttpServletResponse response){
 		List list = null;
@@ -37,6 +38,10 @@ public class ItemAction extends AbstractAction{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	@RequestMapping("setredis")
+	public void setRedisCache(HttpServletResponse response){
+		super.printJSONObj(response, this.itemService.setRedis());
 	}
 	@Override
 	public String getFlag() {

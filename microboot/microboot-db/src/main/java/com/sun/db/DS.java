@@ -13,5 +13,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface DS {  
-    String value();  
+    String value() default "datasource1";  
 }

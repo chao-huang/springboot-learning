@@ -32,7 +32,7 @@ public class ApplicationAop {
 		return result;
 	}
 	@Before("@annotation(ds)")  
-    public void beforeSwitchDS(JoinPoint point,DS ds){  
+    public void beforeSwitchDS(JoinPoint point, DS ds){  
         //获得当前访问的class  
         Class<?> className = point.getTarget().getClass();  
         //获得访问的方法名  

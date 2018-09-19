@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import com.sun.dao.IItemDAO;
+import com.sun.redisservice.IRedisService;
 import com.sun.service.IItemService;
 import com.sun.vo.Item;
 
@@ -15,6 +16,8 @@ import com.sun.vo.Item;
 public class ItemServiceImpl implements IItemService {
 	@Resource
 	private IItemDAO itempDAO;
+	@Resource
+	private IRedisService redisService;
 	@Override
 	@Cacheable(cacheNames="items", keyGenerator="KeyGenerator")
 	public Map<String, Object> getAll() throws Exception {
@@ -32,5 +35,9 @@ public class ItemServiceImpl implements IItemService {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	public boolean setRedis(){
+		boolean flag = this.redisService.set("hello", "hello word");
+		return flag;
 	}
 }

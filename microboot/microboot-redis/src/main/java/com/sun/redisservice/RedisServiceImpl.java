@@ -87,9 +87,9 @@ public class RedisServiceImpl implements IRedisService {
 
     /**
      * 写入缓存
-     * @param key
-     * @param value
-     * @param expireTime
+     * @param key 缓存的key
+     * @param value  缓存的对象
+     * @param expireTime  设置的超时时间
      * @return
      */
     public boolean set(String key, Object value, Long expireTime) {
@@ -107,8 +107,8 @@ public class RedisServiceImpl implements IRedisService {
 
     /**
      * 根据Key刷新超时时间
-     * @param key
-     * @param expireTime
+     * @param key   缓存的key
+     * @param expireTime  重新设置缓存的时间
      * @return
      */
     public boolean flushExpireTime(final String key, Long expireTime) {
@@ -185,6 +185,6 @@ public class RedisServiceImpl implements IRedisService {
     public void put(String key, String field, Long value) {
         BoundHashOperations hashOps = redisTemplate.boundHashOps(key);
         redisTemplate.setHashValueSerializer(new GenericToStringSerializer(Long.class));
-        hashOps.put(field, value);
+        hashOps.put(field, value);                     
     }
 }

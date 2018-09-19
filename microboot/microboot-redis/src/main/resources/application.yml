@@ -15,9 +15,9 @@ spring:    #表示该配置是交给spring进行处理
     maxActive: 100     #最大连接数
     maxWait: 1000      #最大连接等待时间
   redis:
-    host: 192.168.239.130   #redis的连接地址
+    host: 192.168.239.132   #redis的连接地址
     port: 6379    #redis的连接端口号
-    password: hello  #redis的连接密码
+    password: 1234  #redis的连接密码
     database: 0   #默认的数据库
     timeout: 1000  #设置超时时间
   cache:
