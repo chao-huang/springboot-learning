@@ -39,8 +39,8 @@ public class ScheduledUtil implements SchedulingConfigurer {
 
     @Override
     public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
-        scheduledTaskRegistrar.addTriggerTask(doTask(), getTrigger());
-        scheduledTaskRegistrar.addTriggerTask(doTask1(), getTrigger1());
+        //scheduledTaskRegistrar.addTriggerTask(doTask(), getTrigger());
+        //scheduledTaskRegistrar.addTriggerTask(doTask1(), getTrigger1());
     }
     public void run(Runnable task,Trigger trigger){
     	ScheduledTaskRegistrar scheduledTaskRegistrar = new ScheduledTaskRegistrar();
