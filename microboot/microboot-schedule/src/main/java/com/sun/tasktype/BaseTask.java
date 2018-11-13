@@ -1,4 +1,4 @@
-package com.sun.taskbase;
+package com.sun.tasktype;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,9 +8,10 @@ import org.springframework.scheduling.config.ScheduledTask;
 import com.sun.taskconfig.TaskConfig;
 import com.sun.taskconfig.TaskType;
 
-
 /**
- * 基本的任务配置类
+ *  任务定时器的基本配置类
+ * @author Administrator
+ *
  */
 public abstract class BaseTask implements Runnable,InitializingBean {
     protected final Logger log = LoggerFactory.getLogger(this.getClass());

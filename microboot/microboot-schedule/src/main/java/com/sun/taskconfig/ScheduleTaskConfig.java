@@ -11,7 +11,7 @@ import org.springframework.scheduling.config.*;
 import org.springframework.scheduling.support.CronTrigger;
 import org.springframework.stereotype.Component;
 
-import com.sun.taskbase.BaseTask;
+import com.sun.tasktype.BaseTask;
 
 import java.util.Date;
 import java.util.List;
@@ -30,6 +30,7 @@ public class ScheduleTaskConfig implements SchedulingConfigurer {
     private final static String TASK_EXISTS = "exists";  //任务已存在
     private final static String FAILURE = "failure";   //添加任务失败
     private final static String SUCCESS = "success";   //添加任务成功
+    
     private ScheduledTaskRegistrar scheduledTaskRegistrar;
     @Override
     public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
@@ -40,9 +41,7 @@ public class ScheduleTaskConfig implements SchedulingConfigurer {
      * 初始化已配置任务
      */
     private void initTask() {
-        TaskConfig.getTasks().forEach(task -> addTaskByTaskType(task));
         List<BaseTask> list = TaskConfig.getTasks();
-        
         for(BaseTask task : list){
         	addTaskByTaskType(task);
         }

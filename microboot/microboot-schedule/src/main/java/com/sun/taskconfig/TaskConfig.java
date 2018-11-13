@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.sun.taskbase.BaseTask;
+import com.sun.tasktype.BaseTask;
 
 /**
  * 缓存任务信息
@@ -54,7 +54,11 @@ public abstract class TaskConfig {
     static BaseTask getTask(String taskId) {
         return tasks.get(taskId);
     }
-
+     /**
+      * 根据任务Id删除任务
+      * @param taskId
+      * @return
+      */
     static BaseTask removeTask(String taskId) {
         return tasks.remove(taskId);
     }

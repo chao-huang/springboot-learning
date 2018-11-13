@@ -1,9 +1,14 @@
-package com.sun.taskbase;
+package com.sun.tasktype;
 
 import com.sun.taskconfig.TaskType;
-
+/**
+ *  使用corn表达式的是任务定时器的配置类
+ * @author Administrator
+ *
+ */
 public abstract class BaseCronTask extends BaseTask {
     private String expression;
+   
     public BaseCronTask(TaskType taskType, String id) {
         super(taskType, id);
     }

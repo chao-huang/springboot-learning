@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.sun.taskbase.BaseCronTask;
-import com.sun.taskbase.BaseFixedTask;
-import com.sun.taskbase.ScheduleBaseService;
 import com.sun.taskconfig.TaskType;
+import com.sun.tasktype.BaseCronTask;
+import com.sun.tasktype.BaseFixedTask;
+import com.sun.tasktype.ScheduleBaseService;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

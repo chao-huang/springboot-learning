@@ -1,4 +1,4 @@
-package com.sun.taskbase;
+package com.sun.tasktype;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -3,8 +3,8 @@ package com.sun.taskservice;
 import com.sun.taskconfig.TaskType;
 
 /**
- * 用于api传输的任务对象
- * littlehow 2018/4/4
+ * 任务的实体类
+ * 
  */
 public class TaskDto {
 
