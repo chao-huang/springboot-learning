@@ -24,7 +24,7 @@ public class ScheduleAction {
     	task1.setExpression("0/13 * * * * ?");
     	task1.setTaskId("12345");
     	task1.setTaskType(TaskType.CRON);
-    	task1.setCallbackUrl("http://localhost/say");
+    	task1.setCallbackUrl("http://localhost:8089/say");
     	this.taskExecuteService.addTask(task1);
     	return "add success";
 	}
@@ -50,7 +50,7 @@ public class ScheduleAction {
 	public String updataTask1(){
 		TaskDto task1 = new TaskDto();
     	task1.setTaskId("98765");
-    	task1.setCallbackUrl("http://localhost/say");
+    	task1.setCallbackUrl("http://localhost:8089/say");
     	this.taskExecuteService.updateTask(task1);
     	return "update success";
 	}

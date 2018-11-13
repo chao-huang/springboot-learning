@@ -31,7 +31,7 @@ public class InitTask implements ApplicationListener<ContextRefreshedEvent> {
     	task2.setExpression("0/10 * * * * ?");
     	task2.setTaskId("98765");
     	task2.setTaskType(TaskType.TRIGGER);
-    	task2.setCallbackUrl("http://localhost/hello");
+    	task2.setCallbackUrl("http://localhost:8089/hello");
     	list.add(task2);
     	if (!CollectionUtils.isEmpty(list)) {
     		list.forEach(task -> taskExecuteService.addTask(task));
