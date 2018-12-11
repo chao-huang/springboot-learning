@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;indexControllerTest.java&apos; to &apos;microboot-swagger2/src/test/java/com.sun&apos;&#x0D;&#x0A;- Original project: &apos;microboot-swagger2&apos;&#x0D;&#x0A;- Destination element: &apos;microboot-swagger2/src/test/java/com.sun&apos;&#x0D;&#x0A;- Original element: &apos;com.sun.controller.indexControllerTest.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/test\/java&lt;com.sun" element1="/src\/main\/java&lt;com.sun.controller{indexControllerTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1543928719504" units="1" version="1.0"/>
+</session>

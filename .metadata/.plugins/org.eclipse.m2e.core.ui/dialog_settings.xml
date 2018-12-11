@@ -9,7 +9,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="microboot-consul-client"/>
+			<item value="microboot-schedule"/>
 			<item value="microboot"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -47,6 +47,8 @@
 	</section>
 	<section name="MavenModuleWizardParentPage">
 		<list key="moduleName">
+			<item value="microboot-schedule"/>
+			<item value="microboot-db"/>
 			<item value="microboot-consul-client"/>
 			<item value="consul-client"/>
 		</list>
@@ -67,6 +69,8 @@
 			<item value="com.sun"/>
 		</list>
 		<list key="artifactId">
+			<item value="microboot-schedule"/>
+			<item value="microboot-db"/>
 			<item value="microboot-consul-client"/>
 			<item value="consul-client"/>
 		</list>
@@ -80,6 +84,19 @@
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="E:\sblearn\microboot"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
 	</section>
 </section>

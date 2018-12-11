@@ -2,4 +2,6 @@
 <aop-reference-model>
 <aop-project name="microboot-base"/>
 <aop-project name="microboot-redis"/>
+<aop-project name="microboot-db"/>
+<aop-project name="microboot-swagger2"/>
 </aop-reference-model>

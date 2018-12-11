@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="installedFeatures">
+		<item value="com.alibaba.smartfox.eclipse.feature:1.0.6.201811120740"/>
 		<item value="com.collabnet.subversion.merge.feature:2.2.4"/>
 		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
 		<item value="com.sun.jna:3.2.7"/>
